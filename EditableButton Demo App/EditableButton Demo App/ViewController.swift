@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        dateButton.inputView = datePicker
+        //dateButton.inputView = datePicker
         datePicker.addTarget(self, action: #selector(ViewController.dateChanged(_:)), for: .valueChanged)
 
         let dateToolbar = UIToolbar(frame: CGRect.zero)
@@ -54,4 +54,3 @@ class ViewController: UIViewController {
         dateButton.resignFirstResponder()
     }
 }
-

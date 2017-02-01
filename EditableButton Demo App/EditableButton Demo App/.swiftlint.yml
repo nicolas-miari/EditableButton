@@ -1,0 +1,5 @@
+line_length: 250
+cyclomatic_complexity: 19
+function_body_length: 50
+included:
+- ../../
