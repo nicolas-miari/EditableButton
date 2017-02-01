@@ -9,6 +9,17 @@
 import UIKit
 
 /**
+ UIButton subclass whose title label text can be edited using the system 
+ keyboard, just like a text field.
+ 
+ By adopting the protocols `UIKeyInput` and `UITextInputTraits`, and being able 
+ to become first responder, the system keyboard is displayed when the button is
+ tapped.
+
+ Like text fields and text views, it also supports setting up a custom input 
+ view (for exmple, a date picker or a generic picker view) and an input 
+ accessory view (for example, a toolbar with 'done' and/or 'cancel' buttons to
+ dismiss the input view).
  */
 class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
 
@@ -62,8 +73,10 @@ class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
 
     // MARK: - UIResponder
 
+    /// Provides storage to override the read-only property `inputView`.
     private var customInputView: UIView?
 
+    /// Overrides the base class' read-only property to make it read-write.
     override var inputView: UIView? {
         get {
             return customInputView
@@ -73,8 +86,10 @@ class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
         }
     }
 
+    /// Provides storage to override the read-only property `inputAccessoryView`.
     private var customInputAccessoryView: UIView?
 
+    /// Overrides the base class' read-only property to make it read-write.
     override var inputAccessoryView: UIView? {
         get {
             return customInputAccessoryView
@@ -84,6 +99,8 @@ class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
         }
     }
 
+    /// `UIButton` returns `false`. This implementation returns `true` so the 
+    /// button can be edited.
     override var canBecomeFirstResponder: Bool {
         return true
     }
@@ -93,6 +110,8 @@ class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
+        // Setup self as target of button action, so we can call
+        // becomeFirstResponder() on tap and begin editing:
         self.addTarget(self, action: #selector(EditableButton.tap(_:)), for: .touchDown)
     }
 

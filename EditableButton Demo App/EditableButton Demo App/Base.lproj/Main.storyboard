@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,23 +19,44 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5q-9H-5CQ" customClass="EditableButton" customModule="EditableButton_Demo_App" customModuleProvider="target">
-                                <rect key="frame" x="146" y="319" width="82" height="30"/>
+                                <rect key="frame" x="119" y="256.5" width="82" height="30"/>
                                 <state key="normal" title="Date Button"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QVG-vB-yle">
+                                <rect key="frame" x="16" y="50" width="288" height="41"/>
+                                <string key="text">Tap the buttons below to 
+edit their titles.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XSU-xe-J0o">
+                                <rect key="frame" x="16" y="239.5" width="288" height="1"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="OQz-np-7rr"/>
+                                </constraints>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IR-hX-plw" customClass="EditableButton" customModule="EditableButton_Demo_App" customModuleProvider="target">
-                                <rect key="frame" x="148" y="250" width="79" height="30"/>
+                                <rect key="frame" x="121" y="193.5" width="79" height="30"/>
                                 <state key="normal" title="Text Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="QVG-vB-yle" secondAttribute="leading" id="8eX-f0-zcg"/>
+                            <constraint firstItem="XSU-xe-J0o" firstAttribute="top" secondItem="1IR-hX-plw" secondAttribute="bottom" constant="16" id="9fe-hn-whG"/>
                             <constraint firstItem="1IR-hX-plw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AUv-RY-rlq"/>
-                            <constraint firstItem="D5q-9H-5CQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TZR-jH-ZxL"/>
-                            <constraint firstItem="D5q-9H-5CQ" firstAttribute="top" secondItem="1IR-hX-plw" secondAttribute="bottom" constant="39" id="co6-3Y-J4G"/>
+                            <constraint firstItem="XSU-xe-J0o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Htx-Us-0yz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XSU-xe-J0o" secondAttribute="trailing" id="JRs-RC-qCb"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="XSU-xe-J0o" secondAttribute="leading" id="MzD-fI-gqw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QVG-vB-yle" secondAttribute="trailing" id="Tmf-hP-aBe"/>
+                            <constraint firstItem="QVG-vB-yle" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="Urq-jp-sbI"/>
+                            <constraint firstItem="D5q-9H-5CQ" firstAttribute="top" secondItem="XSU-xe-J0o" secondAttribute="bottom" constant="16" id="YVW-Ov-MYg"/>
                             <constraint firstItem="D5q-9H-5CQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wNE-8x-FpB"/>
                         </constraints>
                     </view>
@@ -45,6 +67,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="138.75" y="135"/>
         </scene>
     </scenes>
 </document>
