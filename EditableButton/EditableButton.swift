@@ -112,7 +112,11 @@ class EditableButton: UIButton, UITextInputTraits, UIKeyInput {
 
         // Setup self as target of button action, so we can call
         // becomeFirstResponder() on tap and begin editing:
+
         self.addTarget(self, action: #selector(EditableButton.tap(_:)), for: .touchDown)
+
+        // Perhaps it is better to just override sendAction(_:to:for:)?
+        // https://developer.apple.com/reference/uikit/uicontrol
     }
 
     deinit {
