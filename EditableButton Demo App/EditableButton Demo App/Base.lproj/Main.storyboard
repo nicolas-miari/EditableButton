@@ -22,18 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5q-9H-5CQ" customClass="EditableButton" customModule="EditableButton_Demo_App" customModuleProvider="target">
-                                <rect key="frame" x="146" y="318.5" width="82" height="30"/>
+                                <rect key="frame" x="146" y="319" width="82" height="30"/>
                                 <state key="normal" title="Date Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IR-hX-plw" customClass="EditableButton" customModule="EditableButton_Demo_App" customModuleProvider="target">
+                                <rect key="frame" x="148" y="250" width="79" height="30"/>
+                                <state key="normal" title="Text Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="1IR-hX-plw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AUv-RY-rlq"/>
                             <constraint firstItem="D5q-9H-5CQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TZR-jH-ZxL"/>
+                            <constraint firstItem="D5q-9H-5CQ" firstAttribute="top" secondItem="1IR-hX-plw" secondAttribute="bottom" constant="39" id="co6-3Y-J4G"/>
                             <constraint firstItem="D5q-9H-5CQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wNE-8x-FpB"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateButton" destination="D5q-9H-5CQ" id="clu-6Q-g87"/>
+                        <outlet property="textButton" destination="1IR-hX-plw" id="sUr-15-PWy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
